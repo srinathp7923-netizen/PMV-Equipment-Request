@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#667eea">
+<link rel="apple-touch-icon" href="/assets/icon-192.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PMV Equipment Request Management Platform</title>
@@ -2418,5 +2421,13 @@
         // Start real-time simulation for demo
         setTimeout(simulateRealTimeUpdates, 5000);
     </script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(() => console.log('Service Worker registered'))
+      .catch(err => console.warn('SW registration failed:', err));
+  }
+</script>
 </body>
+
 </html>
